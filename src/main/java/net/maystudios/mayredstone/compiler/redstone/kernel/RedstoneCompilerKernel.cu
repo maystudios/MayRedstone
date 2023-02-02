@@ -16,5 +16,9 @@ __global__ void RedstoneDustCompiler(int *Blocks, int *BlockStates, int *newBloc
     int y = blockIdx.y * blockDim.y + threadIdx.y;
     int z = blockIdx.z * blockDim.z + threadIdx.z;
 
-    int index = x * (gridDim.y * blockDim.y ) + y
+    int index = 0;
+
+    if (z - 1 >= 0) {
+        
+    }
 }
