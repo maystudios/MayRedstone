@@ -17,12 +17,14 @@ import net.minecraft.world.gen.settings.DimensionStructuresSettings;
 import java.util.HashMap;
 import java.util.Optional;
 
+/*
 
 public class EmptyWorldChunkGen extends ChunkGenerator {
 
 
     public EmptyWorldChunkGen() {
-        super(BiomeProvider.CODEC, new DimensionStructuresSettings(), new HashMap<>()));
+        super();
+
     }
 
     @Override
@@ -54,4 +56,7 @@ public class EmptyWorldChunkGen extends ChunkGenerator {
     public IBlockReader func_230348_a_(int p_230348_1_, int p_230348_2_) {
         return null;
     }
+
 }
+*/
+

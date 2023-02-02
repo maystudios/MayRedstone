@@ -66,7 +66,7 @@ public class MayRedstone
 
     @SubscribeEvent
     public void onPreInitialization(FMLCommonSetupEvent event) {
-        GameRegistry.registerWorldGenerator(new CustomWorldGenerator(), 0);
+        //GameRegistry.registerWorldGenerator(new CustomWorldGenerator(), 0);
     }
 
     private void setup(final FMLCommonSetupEvent event)
