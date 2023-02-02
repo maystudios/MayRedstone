@@ -1,6 +1,6 @@
-# Minecraft High-Performance Redstone Server
+# MayRedstone GPU Compiler
 
-[![Build Status](https://travis-ci.org/MCHPR/MCHPRS.svg?branch=master)](https://travis-ci.org/MCHPR/MCHPRS) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Discord Banner 2](https://discordapp.com/api/guilds/724072903083163679/widget.png)](https://discord.com/invite/svK9JU7)
+[![Build Status](https://travis-ci.org/MCHPR/MCHPRS.svg?branch=master)](https://travis-ci.org/MCHPR/MCHPRS) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://www.apache.org/licenses/LICENSE-2.0) [![Discord Banner 2](https://discordapp.com/api/guilds/724072903083163679/widget.png)](https://discord.com/invite/svK9JU7)
 
 A Minecraft 1.16.5 creative client Mid built for redstone. You can create Plots in Chunk Dimensions up to 32 * 32 (smallest 1 * 1) and every chunk outside this is deactivated, allowing for less lag, more concurrency!
 
@@ -45,16 +45,6 @@ MayRedstone will generate a `Config.toml` file in the current working directory 
 | Command | Alias | Description |
 | --- | --- |--- |
 | `/rtps [rtps]` | None | Set the **redstone** ticks per second in the plot to `[rtps]`. (There are two game ticks in a redstone tick) |
-| `/radvance [ticks]` | `/radv` | Advances the plot by `[ticks]` redstone ticks. |
-| `/teleport [player]` | `/tp` | Teleports you to `[player]`. |
-| `/teleport [x] [y] [z]` | `/tp` | Teleports you to `[x] [y] [z]`. Supports relative coordinates. Floats can be expressed as described [here](https://doc.rust-lang.org/std/primitive.f64.html#grammar). |
-| `/speed [speed]` | None | Sets your flyspeed. |
-| `/gamemode [mode]` | `/gmc`, `/gmsp` | Sets your gamemode. |
-| `/container [type] [power]` | None | Gives you a container (e.g. barrel) which outputs a specified amount of power when used with a comparator. |
-| `/redpiler compile` | `/rp c` | Manually starts redpiler compilation. Available flags: --io-only --optimize --export (or in short: -I -O -E) |
-| `/redpiler reset` | `/rp r` | Stops redpiler. |
-| `/toggleautorp` | None | Toggles automatic redpiler compilation. |
-| `/stop` | None | Stops the server. |
 
 ### Plot Creation
 The plot creation system in MayRedstone is very incomplete.
@@ -72,6 +62,17 @@ These are the commands that are currently implemented:
 
 ### Menu
 
+### Start
+| Command              | Alias | Description                                                                  |
+|----------------------| --- |------------------------------------------------------------------------------|
+| `/may start [start]` | None | Start the **MayRedstone GPU Compiler**. (Run not visible (No Block Updates)) |
+| `/may stop  [stop]`  | None | stop the **MayRedstone GPU Compiler**.                                       |
+
+
+### Areas
+| Command              | Alias | Description                                                                  |
+|----------------------| --- |------------------------------------------------------------------------------|
+| `/may scan  [scan]`  | None | Scan blocks in Area to allocate them on the GPU.                             |
 
 ## Acknowledgments
 - [@AL1L](https://github.com/AL1L) for his contributions to worldedit and other various features.
