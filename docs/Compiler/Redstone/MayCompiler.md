@@ -8,7 +8,7 @@ Redstone circuits can be represented in a Grid to process it in parallel.
 And sees Blocks as Number states [Block List](../List/BlockList.md)
 
 
-The compilation progresss will be split into stages as follows
+The compilation progresss will be split into stages as follows:
 
 1. Set the powered states in the `GPU Allocation Memory`
 2. Process base `Inputs` like Buttons or Plates ... and set Block powered state through `CUDA Kernel`

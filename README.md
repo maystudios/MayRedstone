@@ -20,7 +20,6 @@ May Redstone make it possible to run programs such as [Graph Rendering, Conway's
    - [Start](#start)
    - [Areas](#areas)
 - [Acknowledgments](#acknowledgments)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## Building
@@ -73,7 +72,7 @@ TODO
 
 
 ## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+Pull requests are so far not welcome (Alpha). For major changes, please open an issue first to discuss what you would like to change.
 
 ## License
 [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0)
