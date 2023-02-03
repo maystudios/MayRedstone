@@ -1,6 +1,6 @@
 # MayRedstone Compiler
 
-The goal of this project is to optimize redstone and process it on CUDA Kernel to speeds which are largely considered impossible by using compiler techniques inspired by LLVM.
+The goal of this project is to optimize redstone and process it on CUDA Kernel to speeds which are largely considered impossible by using compiler techniques inspired by UnrealEngine.
 
 # In-memory representation
 
