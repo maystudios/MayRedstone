@@ -3,20 +3,38 @@ extern "C"
 struct Block {
     int BlockType;
     int BlockState;
-}
+};
 
-__global__ void RedstoneCompiler(int *Blocks, int *BlockStates, int *newBlockStates) {
+__global__ void RedstoneCompiler(Block *Blocks, Block *newBlockStates) {
     int x = blockIdx.x * blockDim.x + threadIdx.x;
     int y = blockIdx.y * blockDim.y + threadIdx.y;
     int z = blockIdx.z * blockDim.z + threadIdx.z;
 
+    int zLength = (gridDim.z * blockDim.z);
+    int xzLength = (gridDim.y * blockDim.y) * zLength;
+
+    int index = xzLength * x + zLength * y + z;
+
+    int _BlockType = Block[index]->BlockType;
+
+    switch(BlockType) {
+        case 0:
+
+        break;
+
+        case 1:
+
+        break;
+    }
+}
+
+__device__ void calc (int x, int y , int z, int *Blocks, int *BlockStates, int *newBlockStates) {
 
 }
 
-__device__ void (int x, int y , int z, int *Blocks, int *BlockStates, int *newBlockStates) {
 
-}
 
+/*
 __global__ void RedstoneDustCompiler(int *Blocks, int *BlockStates, int *newBlockStates, int x, int y, int z) {
     int x = blockIdx.x * blockDim.x + threadIdx.x;
     int y = blockIdx.y * blockDim.y + threadIdx.y;
@@ -46,4 +64,5 @@ __global__ void RedstonePoweredCompiler(CUdeviceptr devBlocks, int *newBlockStat
 
     switch ()
 }
+*/
 
