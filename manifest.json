@@ -1,10 +1,16 @@
 {
+
+
+  "content_security_policy": "script-src 'self' https://example.com; object-src 'self'",
+
+  "default_locale": "en",
+
+  "description": "A minecraft forge mod for handling redstone actions via Cuda!",
+
   "manifest_version": 1,
-  "type": "Forge Mod",
-  "meta": {
-    "name": "May Redstone",
-    "author": "May Studios",
-    "version": "1.0.2-alpha",
-    "description": "May Redstone Mod for GPU redstone compilation",
-  }
+
+  "name": "May Redstone",
+  
+  "version": "1.0.2-alpha"
+
 }
