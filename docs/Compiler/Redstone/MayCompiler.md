@@ -18,7 +18,7 @@ The compilation progresss will be split into stages as follows
 
 ### Example
 
-![Example In-Game](../../assests/Redstone-Template.png)
+![Example In-Game](../../assests/Cuda/local_space.png)
 
 
 ## Logic optimization
@@ -89,6 +89,4 @@ $L__BB0_2:
 	ret;
 
 }
-
-
 ```

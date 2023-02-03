@@ -65,7 +65,7 @@ These are the commands that are currently implemented:
 | `/may scan  [scan]`  | None | Scan blocks in Area to allocate them on the GPU.                             |
 
 ## Acknowledgments
-- [@ChatGPT](https://openai.com/blog/chatgpt/) for explaining me erros LAMAO
+- [@ChatGPT](https://openai.com/blog/chatgpt/) for explaining me errors LAMAO
 
 
 ## Contributing
