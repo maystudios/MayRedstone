@@ -6,7 +6,7 @@ A Minecraft 1.16.5 creative client Mid built for redstone. You can create Plots 
 
 MayRedstone is very different from the traditional redstone Compiler. Because this Client mod allows to disable specific Block Updates or Block Updates in specific areas. (However the Blocks gets updated in background without visibility).
 
-MCHPRS has made it possible to run programs such as [Graph Rendering, Conway's Game of Life, and Mandelbrot Rendering](https://www.youtube.com/watch?v=FDiapbD0Xfg) on CPUs in Minecraft. To accomplish these speeds, we created [MayCompiler](docs/MayCompiler.md), the "Redstone Compiler".
+MCHPRS has made it possible to run programs such as [Graph Rendering, Conway's Game of Life, and Mandelbrot Rendering](https://www.youtube.com/watch?v=FDiapbD0Xfg) on CPUs in Minecraft. To accomplish these speeds, we created [MayCompiler](docs/Compiler/Redstone/MayCompiler.md), the "Redstone Compiler".
 
 ## Table of Contents
 
@@ -15,7 +15,7 @@ MCHPRS has made it possible to run programs such as [Graph Rendering, Conway's G
 - [Configuration](#configuration)
 - [Usage](#usage)
    - [General Commands](#general-commands)
-   - [Plot Creation](#plot-creation)
+   - [World Creation](#world-creation)
    - [Menu](#menu)
    - [Start](#start)
    - [Areas](#areas)
@@ -46,19 +46,9 @@ MayRedstone will generate a `Config.toml` file in the current working directory 
 | --- | --- |--- |
 | `/rtps [rtps]` | None | Set the **redstone** ticks per second in the plot to `[rtps]`. (There are two game ticks in a redstone tick) |
 
-### Plot Creation
+### World Creation
 The plot creation system in MayRedstone is very incomplete.
 These are the commands that are currently implemented:
-| Command | Alias | Description |
-| --- | --- |--- |
-| `/plot info` | `/p i` | Gets the owner of the plot you are in. |
-| `/plot claim` | `/p c` | Claims the plot you are in if it is not already claimed. |
-| `/plot auto` | `/p a` | Automatically finds an unclaimed plot and claims. |
-| `/plot middle` | None | Teleports you to the center of the plot you are in. |
-| `/plot visit [player]` | `/p v` | Teleports you to a player's plot. |
-| `/plot tp [x] [z]` | None | Teleports you to the plot at `[x] [y]`. Supports relative coordinates. |
-| `/plot lock` | None | Locks the player into the plot so moving outside of the plot bounds does not transfer you to other plots. |
-| `/plot unlock` | None | Reverses the locking done by `/plot lock`. |
 
 ### Menu
 
@@ -75,8 +65,8 @@ These are the commands that are currently implemented:
 | `/may scan  [scan]`  | None | Scan blocks in Area to allocate them on the GPU.                             |
 
 ## Acknowledgments
-- [@AL1L](https://github.com/AL1L) for his contributions to worldedit and other various features.
-- [@DavidGarland](https://github.com/DavidGarland) for a faster and overall better implementation of `get_entry` in the in-memory storage. This simple function runs 30% of the runtime for redstone.
+- [@ChatGPT](https://openai.com/blog/chatgpt/) for explaining me erros LAMAO
+
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.

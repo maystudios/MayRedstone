@@ -22,3 +22,13 @@ __global__ void RedstoneDustCompiler(int *Blocks, int *BlockStates, int *newBloc
         
     }
 }
+
+__global__ void RedstonePoweredCompiler(int *Blocks, int *BlockStates, int *newBlockStates) {
+
+    int x = blockIdx.x * blockDim.x + threadIdx.x;
+    int y = blockIdx.y * blockDim.y + threadIdx.y;
+    int z = blockIdx.z * blockDim.z + threadIdx.z;
+
+
+}
+
