@@ -1,6 +1,4 @@
 {
-
-
   "content_security_policy": "script-src 'self' https://example.com; object-src 'self'",
 
   "default_locale": "en",
@@ -10,7 +8,6 @@
   "manifest_version": 1,
 
   "name": "May Redstone",
-  
-  "version": "1.0.2-alpha"
 
+  "version": "1.0.2-alpha"
 }
