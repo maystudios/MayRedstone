@@ -1,12 +1,12 @@
 # MayRedstone GPU Compiler
 
-[![Build Status](https://travis-ci.org/MCHPR/MCHPRS.svg?branch=master)](https://travis-ci.org/MCHPR/MCHPRS) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://www.apache.org/licenses/LICENSE-2.0) [![Discord Banner 2](https://discordapp.com/api/guilds/724072903083163679/widget.png)](https://discord.com/invite/svK9JU7)
+![Code Size](https://img.shields.io/github/languages/code-size/CrazyKnight144hz/MayRedstone?color=g) [![License](https://img.shields.io/github/license/CrazyKnight144hz/MayRedstone?color=red)](https://www.apache.org/licenses/LICENSE-2.0) ![Commits](https://img.shields.io/github/commit-activity/m/CrazyKnight144hz/MayRedstone?color=orange)
 
 A Minecraft 1.16.5 creative client Mid built for redstone. You can create Plots in Chunk Dimensions up to 32 * 32 (smallest 1 * 1) and every chunk outside this is deactivated, allowing for less lag, more concurrency!
 
 MayRedstone is very different from the traditional redstone Compiler. Because this Client mod allows to disable specific Block Updates or Block Updates in specific areas. (However the Blocks gets updated in background without visibility).
 
-MCHPRS has made it possible to run programs such as [Graph Rendering, Conway's Game of Life, and Mandelbrot Rendering](https://www.youtube.com/watch?v=FDiapbD0Xfg) on CPUs in Minecraft. To accomplish these speeds, we created [MayCompiler](docs/Compiler/Redstone/MayCompiler.md), the "Redstone Compiler".
+May Redstone make it possible to run programs such as [Graph Rendering, Conway's Game of Life, and Mandelbrot Rendering](https://www.youtube.com/watch?v=FDiapbD0Xfg) on CPUs and GPUs in Minecraft. To accomplish these speeds, we created [MayCompiler](docs/Compiler/Redstone/MayCompiler.md), the "Redstone Compiler".
 
 ## Table of Contents
 
@@ -30,7 +30,9 @@ If the NVCC compiler is not already installed, you can find out how [on their of
 ```shell
 git clone https://github.com/CrazyKnight144hz/MayRedstone.git
 cd MayRedstone
-cargo build --release
+nvcc -curbin "[shader].cu"
+or 
+nvcc -ptx "[shader].cu"
 ```
 
 Once complete, the optimized executable will be located at `./target/release/mayredstone` or `./target/release/mayredstone.exe` depending on your operating system.
@@ -49,6 +51,8 @@ MayRedstone will generate a `Config.toml` file in the current working directory 
 ### World Creation
 The plot creation system in MayRedstone is very incomplete.
 These are the commands that are currently implemented:
+
+TODO
 
 ### Menu
 
