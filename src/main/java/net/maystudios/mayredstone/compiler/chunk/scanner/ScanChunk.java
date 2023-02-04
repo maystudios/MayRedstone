@@ -40,27 +40,7 @@ public class ScanChunk {
         return chunks;
     }
 
-    public BlockState[] scanBlocksInChunk1D(Chunk chunk) {
-        BlockState blocks[] = new BlockState[16 * 16 * 256];
 
-        int i = 0;
-        for (int x = 0; x < 16; x++) {
-            for (int z = 0; z < 16; z++) {
-                for (int y = 0; y < 256; y++) {
-                    blocks[i++] = world.getBlockState(new BlockPos(x, y, z));
-                }
-            }
-        }
-        return blocks;
-    }
-
-    public BlockState[] scanBlocksInChunks1D(Chunk[] chunks) {
-        List<BlockState>blocks = null;
-        for (Chunk chunk: chunks) {
-            blocks.addAll(Arrays.asList(scanBlocksInChunk1D(chunk)));
-        }
-        return blocks.toArray(new BlockState[0]);
-    }
 
 
 
