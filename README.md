@@ -1,6 +1,6 @@
 # MayRedstone GPU Compiler
 
-![Version](https://img.shields.io/github/manifest-json/v/CrazyKnight144hz/MayRedstone?color=brightgreen) ![Code Size](https://img.shields.io/github/languages/code-size/CrazyKnight144hz/MayRedstone?color=blue) [![License](https://img.shields.io/github/license/CrazyKnight144hz/MayRedstone?color=orange)](https://www.apache.org/licenses/LICENSE-2.0) ![Commits](https://img.shields.io/github/commit-activity/m/CrazyKnight144hz/MayRedstone?color=blue) 
+![Version](https://img.shields.io/github/manifest-json/v/maystudios/MayRedstone?color=brightgreen) ![Code Size](https://img.shields.io/github/languages/code-size/maystudios/MayRedstone?color=blue) [![License](https://img.shields.io/github/license/maystudios/MayRedstone?color=orange)](https://www.apache.org/licenses/LICENSE-2.0) ![Commits](https://img.shields.io/github/commit-activity/m/maystudios/MayRedstone?color=blue) 
 
 A Minecraft 1.16.5 creative client Mid built for redstone. You can create Plots in Chunk Dimensions up to 32 * 32 (smallest 1 * 1) and every chunk outside this is deactivated, allowing for less lag, more concurrency!
 
@@ -27,7 +27,7 @@ May Redstone make it possible to run programs such as [Graph Rendering, Conway's
 If the NVCC compiler is not already installed, you can find out how [on their official website](https://visualstudio.microsoft.com/de/downloads/).
 
 ```shell
-git clone https://github.com/CrazyKnight144hz/MayRedstone.git
+git clone https://github.com/maystudios/MayRedstone.git
 cd MayRedstone
 nvcc -curbin "[shader].cu"
 or 
