@@ -1,6 +1,5 @@
 package net.maystudios.mayredstone.compiler.chunk.scanner;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -23,11 +22,11 @@ public class ScanBlockChunk {
     public BlockPos[] getBlocksInChunk(Chunk chunk) {
         BlockPos[] blocks = new BlockPos[CHUNK_SIZE * CHUNK_SIZE * CHUNK_HEIGHT];
 
-        for (int x = 0; x < CHUNK_SIZE; x++) {
-            for (int z = 0; z < CHUNK_SIZE; z++) {
-                for (int y = 0; y < CHUNK_HEIGHT; y++) {
+        for (int y = 0; y < CHUNK_HEIGHT; y++) {
+            for (int x = 0; x < CHUNK_SIZE; x++) {
+                for (int z = 0; z < CHUNK_SIZE; z++) {
                     int index = y + z * CHUNK_HEIGHT + x * CHUNK_SIZE * CHUNK_HEIGHT;
-                    blocks[index] = new BlockPos(chunk.getPos().getXStart() + x, y , chunk.getPos().getZStart() + z);
+                    blocks[index] = new BlockPos(chunk.getPos().getXStart() + x, y, chunk.getPos().getZStart() + z);
                 }
             }
         }
@@ -48,16 +47,17 @@ public class ScanBlockChunk {
         BlockState blocks[] = new BlockState[16 * 16 * 256];
 
         int i = 0;
-        for (int x = 0; x < 16; x++) {
-            for (int z = 0; z < 16; z++) {
-                for (int y = 0; y < 256; y++) {
-                    blocks[i++] = world.getBlockState(new BlockPos(x, y, z));
+        for (int y = 0; y < 256; y++) {
+            for (int x = 0; x < 16; x++) {
+                for (int z = 0; z < 16; z++) {
+                    blocks[i++] = world.getBlockState(new BlockPos(chunk.getPos().getXStart() + x, y, chunk.getPos().getZStart() + z));
                 }
             }
         }
         return blocks;
     }
 
+    //TODO
     public BlockState[] scanBlocksInChunks1D(Chunk[] chunks) {
         List<BlockState>blocks = null;
         for (Chunk chunk: chunks) {

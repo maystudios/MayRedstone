@@ -1,6 +1,6 @@
 # MayRedstone GPU Compiler
 
-![Version](https://img.shields.io/github/manifest-json/v/maystudios/MayRedstone?color=brightgreen) ![Code Size](https://img.shields.io/github/languages/code-size/maystudios/MayRedstone?color=blue) [![License](https://img.shields.io/github/license/maystudios/MayRedstone?color=orange)](https://www.apache.org/licenses/LICENSE-2.0) ![Commits](https://img.shields.io/github/commit-activity/m/maystudios/MayRedstone?color=blue) 
+![Version](https://img.shields.io/github/manifest-json/v/maystudios/MayRedstone?color=criti) ![Code Size](https://img.shields.io/github/languages/code-size/maystudios/MayRedstone?color=blue) [![License](https://img.shields.io/github/license/maystudios/MayRedstone?color=orange)](https://www.apache.org/licenses/LICENSE-2.0) ![Commits](https://img.shields.io/github/commit-activity/m/maystudios/MayRedstone?color=blue) 
 
 A Minecraft 1.16.5 creative client Mid built for redstone. You can create Plots in Chunk Dimensions up to 32 * 32 (smallest 1 * 1) and every chunk outside this is deactivated, allowing for less lag, more concurrency!
 
