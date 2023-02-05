@@ -4,7 +4,7 @@
 
 ![Version](https://img.shields.io/github/manifest-json/v/CrazyKnight144hz/MayRedstone?color=brightgreen) ![Code Size](https://img.shields.io/github/languages/code-size/CrazyKnight144hz/MayRedstone?color=blue) [![License](https://img.shields.io/github/license/CrazyKnight144hz/MayRedstone?color=orange)](https://www.apache.org/licenses/LICENSE-2.0) ![Commits](https://img.shields.io/github/commit-activity/m/CrazyKnight144hz/MayRedstone?color=blue) 
 
-A Minecraft 1.16.5 creative client Mid built for redstone. You can create Plots in Chunk Dimensions up to 32 * 32 (smallest 1 * 1) and every chunk outside this is deactivated, allowing for less lag, more concurrency!
+A Minecraft 1.16.5 creative client Mod built for redstone. You can create Plots in Chunk Dimensions up to 32 * 32 (smallest 1 * 1) and every chunk outside this is deactivated, allowing for less lag, more concurrency!
 
 MayRedstone is very different from the traditional redstone Compiler. Because this Client mod allows to disable specific Block Updates or Block Updates in specific areas. (However the Blocks gets updated in background without visibility).
 
