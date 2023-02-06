@@ -20,7 +20,7 @@ public class ScanBlockChunk {
     }
 
     public BlockPos[] getBlocksInChunk(Chunk chunk) {
-        BlockPos[] blocks = new BlockPos[CHUNK_SIZE * CHUNK_SIZE * CHUNK_HEIGHT];
+        BlockPos[] blocks = new BlockPos[CHUNK_HEIGHT * CHUNK_SIZE * CHUNK_SIZE];
 
         for (int y = 0; y < CHUNK_HEIGHT; y++) {
             for (int x = 0; x < CHUNK_SIZE; x++) {
@@ -44,12 +44,12 @@ public class ScanBlockChunk {
     }
 
     public BlockState[] scanBlocksInChunk1D(Chunk chunk) {
-        BlockState blocks[] = new BlockState[16 * 16 * 256];
+        BlockState blocks[] = new BlockState[CHUNK_HEIGHT * CHUNK_SIZE * CHUNK_SIZE];
 
         int i = 0;
-        for (int y = 0; y < 256; y++) {
-            for (int x = 0; x < 16; x++) {
-                for (int z = 0; z < 16; z++) {
+        for (int y = 0; y < CHUNK_HEIGHT; y++) {
+            for (int x = 0; x < CHUNK_SIZE; x++) {
+                for (int z = 0; z < CHUNK_SIZE; z++) {
                     blocks[i++] = world.getBlockState(new BlockPos(chunk.getPos().getXStart() + x, y, chunk.getPos().getZStart() + z));
                 }
             }
