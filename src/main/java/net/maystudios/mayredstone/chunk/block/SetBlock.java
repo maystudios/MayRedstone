@@ -1,6 +1,7 @@
-package net.maystudios.mayredstone.compiler.block;
+package net.maystudios.mayredstone.chunk.block;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 

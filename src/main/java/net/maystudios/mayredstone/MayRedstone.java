@@ -1,15 +1,15 @@
 package net.maystudios.mayredstone;
 
 import net.maystudios.mayredstone.block.ModBlocks;
-import net.maystudios.mayredstone.compiler.block.handler.BlockUpdateHandler;
+import net.maystudios.mayredstone.chunk.block.handler.BlockUpdateHandler;
+import net.maystudios.mayredstone.compiler.redstone.kernel.RedstoneCompiler;
 import net.maystudios.mayredstone.item.ModItems;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.world.DimensionType;
-import net.minecraft.world.server.ServerWorld;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraftforge.common.MinecraftForge;
 
 import net.minecraftforge.event.RegistryEvent;
@@ -18,7 +18,6 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
 
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
@@ -42,6 +41,8 @@ public class MayRedstone
     private static final Logger LOGGER = LogManager.getLogger();
 
     public static BlockUpdateHandler blockUpdateHandler = new BlockUpdateHandler(Minecraft.getInstance().world);
+
+    public static RedstoneCompiler redstoneCompiler = new RedstoneCompiler(Minecraft.getInstance().world, 1, 1, new ChunkPos(0,0));
 
     public MayRedstone() {
 

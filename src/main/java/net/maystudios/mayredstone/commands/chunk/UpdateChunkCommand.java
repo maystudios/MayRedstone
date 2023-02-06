@@ -7,13 +7,8 @@ import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 
 import net.maystudios.mayredstone.MayRedstone;
-import net.maystudios.mayredstone.compiler.block.SetBlock;
-import net.maystudios.mayredstone.compiler.chunk.scanner.ScanBlockChunk;
-import net.maystudios.mayredstone.compiler.chunk.scanner.ScanChunk;
-import net.maystudios.mayredstone.compiler.chunk.UpdateChunk;
-import net.maystudios.mayredstone.compiler.redstone.kernel.RedstoneCompiler;
+import net.maystudios.mayredstone.compiler.chunk.scanner.ScanBlockWorld;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.command.CommandSource;
 import net.minecraft.command.Commands;
 import net.minecraft.entity.player.ServerPlayerEntity;
@@ -51,28 +46,19 @@ public class UpdateChunkCommand implements Command<CommandSource> {
         BlockPos pos = player.getPosition();
         System.out.println("Passed 1");
 
-        ScanChunk scanChunk = new ScanChunk(world);
-        Chunk[] chunks = scanChunk.scanAllChunks1D(scanChunk.getChunkPosFromBlockPos(pos) ,xCount, zCount);
+        ScanBlockWorld scanBlockWorld = new ScanBlockWorld(world);
+        BlockPos[] blockPos = scanBlockWorld.getBlocksInWorld(new ChunkPos(pos), xCount, zCount);
+        MayRedstone.blockUpdateHandler.unloadBlocks(blockPos);
 
 
-        ScanBlockChunk scanBlockChunk = new ScanBlockChunk(world);
-        BlockPos[] blocks = scanBlockChunk.getBlocksInChunks(chunks);
-        MayRedstone.blockUpdateHandler.unloadBlocks(blocks);
-        System.out.println("Passed 2 " + blocks.length);
+        BlockState[] blockStates = scanBlockWorld.scanBlocksInWorld(new ChunkPos(pos), xCount, zCount);
 
+        MayRedstone.redstoneCompiler.setWorld(world);
+        MayRedstone.redstoneCompiler.setxChunk(xCount);
+        MayRedstone.redstoneCompiler.setzChunk(zCount);
+        MayRedstone.redstoneCompiler.setPos(new ChunkPos(pos));
 
-        BlockState[] blockStates = scanBlockChunk.scanBlocksInChunk1D(chunks[0]);
-        System.out.println("Passed 3");
-        RedstoneCompiler redstoneCompiler = new RedstoneCompiler(world, xCount, zCount, new ChunkPos(pos));
-        System.out.println("Passed 4");
-        redstoneCompiler.relocate(blockStates);
-        System.out.println("Passed 5");
-
-        /*
-        SetBlock setBlock = new SetBlock(world);
-        setBlock.SetBlocks(blocks, Blocks.CYAN_STAINED_GLASS);
-        System.out.println("Passed 4");
-        */
+        // MayRedstone.redstoneCompiler.relocate(blockStates);
     }
 
     public void register(CommandDispatcher<CommandSource> dispatcher) {

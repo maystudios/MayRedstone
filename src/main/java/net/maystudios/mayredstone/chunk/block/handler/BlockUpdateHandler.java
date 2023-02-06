@@ -1,4 +1,4 @@
-package net.maystudios.mayredstone.compiler.block.handler;
+package net.maystudios.mayredstone.chunk.block.handler;
 
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;

@@ -81,7 +81,23 @@ public class RedstoneCompiler {
     public void relocate(BlockState[] blockStates) {
         for (BlockState blockState: blockStates) {
             Block block = blockState.getBlock();
-            System.out.println("Block: " + block + "      " + "BlockState: " + blockState);
+            System.out.println("Block: " + block + "      " + "BlockState: " + blockState + "        " + " BlockID: " + Block.getStateId(blockState) );
         }
+    }
+
+    public void setWorld(World world) {
+        this.world = world;
+    }
+
+    public void setxChunk(int xChunk) {
+        this.xChunk = xChunk;
+    }
+
+    public void setzChunk(int zChunk) {
+        this.zChunk = zChunk;
+    }
+
+    public void setPos(ChunkPos pos) {
+        this.pos = pos;
     }
 }
