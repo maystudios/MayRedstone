@@ -8,6 +8,7 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 
 import net.maystudios.mayredstone.MayRedstone;
 import net.maystudios.mayredstone.compiler.chunk.scanner.ScanBlockWorld;
+import net.maystudios.mayredstone.loging.Log;
 import net.minecraft.block.BlockState;
 import net.minecraft.command.CommandSource;
 import net.minecraft.command.Commands;
@@ -18,6 +19,8 @@ import net.minecraft.util.text.ITextComponent;
 
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.Chunk;
+
+import java.util.logging.Level;
 
 public class UpdateChunkCommand implements Command<CommandSource> {
 
@@ -50,6 +53,7 @@ public class UpdateChunkCommand implements Command<CommandSource> {
         BlockPos[] blockPos = scanBlockWorld.getBlocksInWorld(new ChunkPos(pos), xCount, zCount);
         MayRedstone.blockUpdateHandler.unloadBlocks(blockPos);
 
+        Log.log(Level.INFO," Unload Blocks: " + blockPos.length);
 
         BlockState[] blockStates = scanBlockWorld.scanBlocksInWorld(new ChunkPos(pos), xCount, zCount);
 
@@ -57,6 +61,8 @@ public class UpdateChunkCommand implements Command<CommandSource> {
         MayRedstone.redstoneCompiler.setxChunk(xCount);
         MayRedstone.redstoneCompiler.setzChunk(zCount);
         MayRedstone.redstoneCompiler.setPos(new ChunkPos(pos));
+
+        Log.log(Level.INFO," Scan Blocks: " + blockStates.length);
 
         // MayRedstone.redstoneCompiler.relocate(blockStates);
     }

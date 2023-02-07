@@ -30,7 +30,6 @@ public class ScanBlockWorld {
                 for (int z = 0; z < CHUNK_SIZE * zCount; z++) {
                     int index = y * CHUNK_SIZE * xCount * CHUNK_SIZE * zCount + x * CHUNK_SIZE * zCount + z;
                     blocks[index] = new BlockPos(chunkPos.getXStart() + x, y, chunkPos.getZStart() + z);
-
                 }
             }
         }
@@ -46,7 +45,10 @@ public class ScanBlockWorld {
                 for (int z = 0; z < CHUNK_SIZE * zCount; z++) {
                     int index = y * CHUNK_SIZE * xCount * CHUNK_SIZE * zCount + x * CHUNK_SIZE * zCount + z;
                     blocks[index] = world.getBlockState(new BlockPos(chunkPos.getXStart() + x, y, chunkPos.getZStart() + z));
-                    System.out.println(blocks[index] + "   " + Block.getStateId(blocks[index]));
+
+                    if ( Block.getStateId(blocks[index]) != 0) {
+                        System.out.println(blocks[index] + "   " + Block.getStateId(blocks[index]));
+                    }
                 }
             }
         }

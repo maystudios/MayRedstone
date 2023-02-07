@@ -1,6 +1,7 @@
 package net.maystudios.mayredstone.compiler.redstone.kernel;
 
 import net.maystudios.mayredstone.compiler.chunk.scanner.ScanBlockChunk;
+import net.maystudios.mayredstone.compiler.chunk.scanner.ScanBlockWorld;
 import net.maystudios.mayredstone.compiler.chunk.scanner.ScanChunk;
 import net.maystudios.mayredstone.compiler.config.CompilerConfig;
 import net.maystudios.mayredstone.cuda.BasicJCuda;
@@ -28,8 +29,8 @@ public class RedstoneCompiler {
         public int BlockAdvanced;
     }
     private World world;
-    private int xChunk;
-    private int zChunk;
+    private int xCount;
+    private int zCount;
 
     private ChunkPos pos;
 
@@ -37,12 +38,18 @@ public class RedstoneCompiler {
     private ScanBlockChunk scanBlockChunk;
 
     private Set<BlockState> solidBlocks;
+
+    private int[] bockTypes;
+    private int[] blockStates;
+    private int[] blockAdditionals;
+    private int[] blockAdvanceds;
+    private int[] blockDirections;
     
     public RedstoneCompiler(World world, int xChunk, int zChunk, ChunkPos pos){
         this.world = world;
 
-        this.xChunk = xChunk;
-        this.zChunk = zChunk;
+        this.xCount = xChunk;
+        this.zCount = zChunk;
         this.pos = pos;
 
         this.scanChunk = new ScanChunk(this.world);
@@ -74,8 +81,11 @@ public class RedstoneCompiler {
     }
 
     public void init() {
-        Chunk[] chunks = scanChunk.scanAllChunks1D(pos,xChunk,zChunk);
-        BlockState[] blockStates = scanBlockChunk.scanBlocksInChunks1D(chunks);
+
+        ScanBlockWorld scanBlockWorld = new ScanBlockWorld(world);
+        BlockState[] blockStates = scanBlockWorld.scanBlocksInWorld(pos, xCount, zCount);
+
+
     }
 
     public void relocate(BlockState[] blockStates) {
@@ -85,16 +95,18 @@ public class RedstoneCompiler {
         }
     }
 
+
+
     public void setWorld(World world) {
         this.world = world;
     }
 
     public void setxChunk(int xChunk) {
-        this.xChunk = xChunk;
+        this.xCount = xChunk;
     }
 
     public void setzChunk(int zChunk) {
-        this.zChunk = zChunk;
+        this.zCount = zChunk;
     }
 
     public void setPos(ChunkPos pos) {
